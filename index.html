@@ -4,151 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jefferson Joe Mendoza Vega - Full-Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Estilos Generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #fff;
-            background-color: #0a0a23;
-            display: flex;
-            min-height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-        }
-
-        /* Columna Izquierda (Fija) */
-        .sidebar {
-            width: 30%;
-            background-color: #0f0f1e;
-            padding: 40px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: 1px solid #333;
-        }
-
-        .profile h1 {
-            font-size: 2.8em;
-            margin-bottom: 0.5em;
-        }
-
-        .profile h2 {
-            color: #64ffda;
-            font-size: 1.2em;
-            margin-bottom: 1em;
-        }
-
-        .profile p {
-            line-height: 1.6;
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-
-        .nav-links {
-            margin-top: 40px;
-        }
-
-        .nav-links a {
-            display: block;
-            margin-bottom: 20px;
-            color: #888;
-            font-size: 1.1em;
-            text-decoration: none;
-            position: relative;
-            padding-left: 20px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #64ffda;
-            transform: translateX(5px);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: #64ffda;
-            font-size: 1.8em;
-        }
-
-        .main-content {
-            margin-left: 30%;
-            width: 70%;
-            padding: 40px;
-        }
-
-        h2 {
-            color: #64ffda;
-            margin-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background-color: #00aaff;
-            padding: 8px 12px;
-            border-radius: 5px;
-            color: #fff;
-            transition: transform 0.3s;
-        }
-
-        .skill:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                position: relative;
-                width: 100%;
-                padding: 20px;
-                height: auto;
-            }
-
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-                padding: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -156,28 +13,28 @@
             <div class="profile">
                 <h1>Jefferson Joe Mendoza Vega</h1>
                 <h2>Full-Stack Developer</h2>
-                <p>Especializado en Ruby on Rails, JavaScript, Python, MySQL, PostgreSQL, y Django. Desarrollo de aplicaciones escalables y soluciones API eficientes.</p>
-                <div class="nav-links">
+                <p>Especializado en Ruby on Rails, JavaScript, Python, MySQL, PostgreSQL, y Django.</p>
+                <nav class="nav-links">
                     <a href="#about">Sobre mí</a>
                     <a href="#experience">Experiencia</a>
                     <a href="#skills">Habilidades</a>
                     <a href="#services">Servicios</a>
                     <a href="#projects">Proyectos</a>
                     <a href="#contact">Contacto</a>
-                </div>
+                </nav>
             </div>
             <div class="social-icons">
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/jefferson-joe-mendoza-vega" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/+51990454033" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </aside>
 
         <main class="main-content">
             <section id="about" class="section">
                 <h2>Sobre mí</h2>
-                <p>Desarrollador apasionado por crear experiencias digitales accesibles y escalables, combinando diseño y desarrollo para soluciones innovadoras.</p>
+                <p>Desarrollador apasionado por crear experiencias digitales accesibles y escalables.</p>
             </section>
 
             <section id="experience" class="section">
@@ -201,36 +58,70 @@
                 </div>
             </section>
 
-            <section id="services" class="section">
-                <h2>Servicios</h2>
-                <div class="service">Desarrollo Web</div>
-                <div class="service">Integración de APIs</div>
-                <div class="service">Análisis de Datos</div>
-            </section>
-
             <section id="projects" class="section">
                 <h2>Proyectos</h2>
-                <div class="project">Plataforma IoT</div>
-                <div class="project">Gestión de Inventarios</div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <!-- Proyecto 1 -->
+                        <div class="carousel-item">
+                            <div class="project-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg30eDiOUdaQgbmoG7BFbVYzXomv_yHhne9w&s" alt="Lector de texto avanzado">
+                                <h3>Lector de texto Avanzado</h3>
+                                <p>Lector de texto en tiempo real.</p>
+                                <a href="https://jefferson-joe-mendoza-vega.github.io/lector-de-texto/" class="view-project">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <!-- Proyecto 2 -->
+                        <div class="carousel-item">
+                            <div class="project-card">
+                                <img src="proyecto2.jpg" alt="Gestión de Inventarios">
+                                <h3>Gestión de Inventarios</h3>
+                                <p>Sistema para la gestión de inventarios en tiempo real.</p>
+                                <a href="#" class="view-project">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <!-- Proyecto 3 -->
+                        <div class="carousel-item">
+                            <div class="project-card">
+                                <img src="proyecto3.jpg" alt="App de Finanzas">
+                                <h3>App de Finanzas</h3>
+                                <p>Gestión de finanzas personales.</p>
+                                <a href="#" class="view-project">Ver proyecto</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="section">
+                <h2>Servicios</h2>
+                <div class="services-container">
+                    <div class="service-card"><i class="fas fa-code"></i><h3>Desarrollo Web</h3><p>Aplicaciones web escalables y personalizadas.</p></div>
+                    <div class="service-card"><i class="fas fa-database"></i><h3>Gestión de Bases de Datos</h3><p>Diseño y administración de bases de datos seguras.</p></div>
+                    <div class="service-card"><i class="fas fa-chart-line"></i><h3>Análisis de Datos</h3><p>Generación de informes y decisiones estratégicas.</p></div>
+                    <div class="service-card"><i class="fas fa-cogs"></i><h3>Desarrollo de Sistemas</h3><p>Sistemas personalizados que mejoran la eficiencia.</p></div>
+                    <div class="service-card"><i class="fas fa-file-alt"></i><h3>Landing Pages</h3><p>Páginas de aterrizaje efectivas para marketing.</p></div>
+                    <div class="service-card"><i class="fas fa-pencil-alt"></i><h3>Diseño de Logos</h3><p>Logos personalizados que reflejan la identidad de tu marca.</p></div>
+                </div>
             </section>
 
             <section id="contact" class="section">
                 <h2>Contacto</h2>
                 <p>Para más información, contáctame a través de LinkedIn, GitHub o WhatsApp.</p>
+                <div class="social-icons">
+                    <a href="https://github.com/jefferson-joe-mendoza-vega" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/+51990454033" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </section>
         </main>
     </div>
 
-    <script>
-        const sections = document.querySelectorAll('.section');
-        window.addEventListener('scroll', () => {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 100) {
-                    section.classList.add('show');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
