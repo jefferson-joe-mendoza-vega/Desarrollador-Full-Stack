@@ -356,7 +356,7 @@ h2 {
 }
 
 .typewriter {
-    font-size: 3em; /* Tamaño ajustado */
+    font-size: 0em; /* Tamaño ajustado */
     font-family: 'Orbitron', sans-serif; /* Fuente futurista */
     color: #64ffda;
     letter-spacing: -2px; /* Espaciado futurista */
