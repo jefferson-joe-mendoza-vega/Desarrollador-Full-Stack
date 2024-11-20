@@ -1,4 +1,4 @@
-/* Estilos Generales */
+/* Reset y estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@ body {
     background-color: #0a0a23;
     display: flex;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 /* Contenedor principal */
@@ -38,6 +39,8 @@ body {
 .profile h1 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
+    text-transform: uppercase;
+    color: #64ffda;
 }
 
 .profile h2 {
@@ -62,8 +65,8 @@ body {
     color: #888;
     font-size: 1.1em;
     text-decoration: none;
-    position: relative;
     padding-left: 20px;
+    position: relative;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -106,7 +109,7 @@ h2 {
     transform: translateY(0);
 }
 
-/* Contenedor principal de habilidades con ancho limitado */
+/* Habilidades */
 .skills-container {
     width: 100%;
     overflow: hidden;
@@ -115,7 +118,6 @@ h2 {
     align-items: center;
 }
 
-/* Contenedor de habilidades con animación */
 .skills-list {
     display: flex;
     gap: 20px;
@@ -123,7 +125,6 @@ h2 {
     animation: scroll 15s linear infinite;
 }
 
-/* Habilidades individuales */
 .skill {
     background-color: #00aaff;
     padding: 10px 20px;
@@ -133,28 +134,26 @@ h2 {
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
+    gap: 8px;
     transition: transform 0.3s ease;
 }
 
 .skill i {
-    font-size: 1.5em; /* Tamaño de los iconos */
+    font-size: 1.5em;
 }
 
 .skill:hover {
     transform: scale(1.1);
 }
 
-/* Animación del carrusel continuo */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Desplaza hasta la mitad para repetir */
+        transform: translateX(-50%);
     }
 }
-
 
 /* Carrusel */
 .carousel-container {
@@ -223,7 +222,6 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Controles del carrusel */
 .carousel-controls {
     position: absolute;
     top: 50%;
@@ -248,25 +246,11 @@ h2 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.carousel-controls .prev {
-    left: 20px;
-}
-
-.carousel-controls .next {
-    right: 20px;
-}
-
 /* Servicios */
 #services {
     padding: 40px 0;
     text-align: center;
     background-color: #0a0a23;
-}
-
-#services h2 {
-    color: #64ffda;
-    font-size: 2.5em;
-    margin-bottom: 40px;
 }
 
 .services-container {
@@ -284,27 +268,7 @@ h2 {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     color: #fff;
-    width: 100%;
     max-width: 350px;
-}
-
-.service-card i {
-    font-size: 3em;
-    color: #64ffda;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
-
-.service-card h3 {
-    color: #64ffda;
-    font-size: 1.6em;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    color: #aaa;
-    font-size: 1.1em;
-    line-height: 1.6;
 }
 
 .service-card:hover {
@@ -312,11 +276,7 @@ h2 {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.service-card:hover i {
-    color: #00aaff; /* Cambia el color del icono al hacer hover */
-}
-
-/* Estilos para pantallas pequeñas */
+/* Adaptabilidad */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -334,98 +294,123 @@ h2 {
         width: 100%;
         padding: 20px;
     }
-
-    #services h2 {
-        font-size: 2.2em;
-    }
 }
-/* Animación de tipo "escritura" */
+
+/* Animación de tipo escritura */
 @keyframes typewriter {
-    0% {
+    from {
         width: 0;
-        opacity: 0;
     }
-    50% {
-        width: 50%;
-        opacity: 1;
-    }
-    100% {
+    to {
         width: 100%;
-        opacity: 1;
     }
 }
 
 .typewriter {
-    font-size: 0em; /* Tamaño ajustado */
-    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
-    color: #64ffda;
-    letter-spacing: -2px; /* Espaciado futurista */
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden; /* Evita que el texto se desborde */
-    width: 0; /* Inicialmente no se muestra */
-    opacity: 1;
     display: inline-block;
-    animation: typewriter 3s steps(50) 1s forwards; /* Se acelera la escritura */
-    animation-timing-function: steps(50, end); /* Para que se escriba paso a paso */
-}
-
-/* Animación de tipo "escritura" para cada parte */
-.typewriter span {
-    display: inline-block;
-    width: 0;
     overflow: hidden;
-    animation: typewriter 3s steps(20) forwards;
     white-space: nowrap;
-    opacity: 0;
+    color: #64ffda;
+    animation: typewriter 3s steps(30) forwards;
+}
+/* Contenedor para el texto de "Sobre mí" con diseño moderno */
+.about-container {
+    background: linear-gradient(145deg, rgba(20, 20, 40, 0.9), rgba(40, 40, 80, 0.9)); /* Degradado moderno */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque (glassmorphism) */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde translúcido */
+    padding: 30px; /* Espaciado interno amplio */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    margin-top: 20px; /* Espaciado superior */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    position: relative;
+    overflow: hidden;
+    color: #fff; /* Texto blanco */
 }
 
-/* Primera parte sin retraso */
-.typewriter span:nth-child(1) {
-    animation-delay: 0s;
+/* Animación decorativa para el fondo */
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.2), rgba(0, 0, 0, 0));
+    animation: rotateBackground 10s linear infinite;
+    z-index: 1;
+    opacity: 0.7;
 }
 
-/* Segunda parte con retraso */
-.typewriter span:nth-child(2) {
-    animation-delay: 0.5s; /* Retraso para un efecto más natural */
-}
-
-/* Para partes adicionales, puedes agregar más retrasos si es necesario */
-
-/* Añadiendo un efecto de escritura más natural con "ruido" */
-@keyframes typewriterNoise {
+/* Fondo animado giratorio */
+@keyframes rotateBackground {
     0% {
-        width: 0;
-        opacity: 0;
-    }
-    10% {
-        width: 10%;
-        opacity: 0.1;
-    }
-    30% {
-        width: 25%;
-        opacity: 0.3;
-    }
-    50% {
-        width: 50%;
-        opacity: 0.5;
-    }
-    70% {
-        width: 75%;
-        opacity: 0.7;
-    }
-    90% {
-        width: 90%;
-        opacity: 0.9;
+        transform: rotate(0deg);
     }
     100% {
-        width: 100%;
-        opacity: 1;
+        transform: rotate(360deg);
     }
 }
 
-/* Aplicamos el "ruido" a cada letra para hacerla más dinámica */
-.typewriter span:nth-child(1), .typewriter span:nth-child(2) {
-    animation: typewriterNoise 2s steps(50) forwards;
+/* Asegurarse de que el contenido quede encima del fondo animado */
+.about-container p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9); /* Blanco con un ligero tono translúcido */
+}
+
+/* Título "Sobre mí" con diseño moderno */
+#about h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #64ffda; /* Color destacado moderno */
+    font-weight: bold;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+/* Vista móvil (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Ajustar el contenedor de "Sobre mí" */
+    .about-container {
+        padding: 15px; /* Reducir el espaciado interno */
+        font-size: 1em; /* Texto ligeramente más pequeño */
+        max-width: 90%; /* Usar casi todo el ancho disponible */
+        margin: 0 auto; /* Centrar horizontalmente */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    }
+
+    /* Ajustar el título */
+    #about h2 {
+        font-size: 1.8em; /* Reducir tamaño del título */
+        margin-bottom: 15px;
+    }
+
+    /* Ajustar el texto dentro del contenedor */
+    .about-container p {
+        font-size: 0.95em; /* Reducir un poco el tamaño del texto */
+        line-height: 1.6; /* Espaciado suficiente para legibilidad */
+        text-align: justify; /* Mantener justificación para estética */
+    }
 }
 
